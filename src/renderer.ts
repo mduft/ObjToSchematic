@@ -459,6 +459,7 @@ export class Renderer {
                 if (gridBuffer !== undefined) {
                     this._drawBuffer(this._gl.LINES, gridBuffer.getWebGLBuffer(), ShaderManager.Get.debugProgram, {
                         u_worldViewProjection: ArcballCamera.Get.getWorldViewProjection(),
+                        u_worldOffset: [0, this._sliceViewEnabled ? this._sliceHeight * this._voxelSize: 0, 0],
                     });
                 }
             }
